@@ -1,5 +1,10 @@
-from Cpf import Cpf
+from cpf_cnpj import CpfCnpj
 
-cpf = 37012153830
+ex_cnpj = "13536632000116"
 
-objeto_cpf = Cpf(cpf)
+
+cpf = "37012153830"
+
+documento = CpfCnpj(cpf,'cpf')
+
+print(documento)
