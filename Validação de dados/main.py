@@ -1,10 +1,15 @@
-from cpf_cnpj import CpfCnpj
+import requests
+from acesso_cep import BuscaEndereco
 
-ex_cnpj = "13536632000116"
+cep = 12350000
 
+objeto_cep = BuscaEndereco(cep)
 
-cpf = "37012153830"
+print(objeto_cep)
 
-documento = CpfCnpj(cpf,'cpf')
+r = requests.get("https://viacep.com.br/ws/01001000/json/")
+print(r.text)
 
-print(documento)
+bairro, cidade, uf = objeto_cep.acessa_via_cep()
+
+print(bairro, cidade, uf)
